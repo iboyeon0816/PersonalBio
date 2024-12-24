@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #5bbae5;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+  margin: 1rem;
+}
+
+.team-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  width: 150px;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.about-me img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea, form button {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+#messages {
+  margin-top: 1rem;
+  background: #f9f9f9;
+  padding: 1rem;
+}
