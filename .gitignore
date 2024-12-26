@@ -13,6 +13,7 @@ Release*/
 .svn/
 *.dev.js
 *.dev.mjs
+*.development
 
 ###################################
 # IDE specific
