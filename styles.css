@@ -11,8 +11,8 @@ a {
 }
 
 .modal-dialog {
-  max-width: 650px; 
-  width: 80%;      
+  max-width: 600px; 
+  width: 70%;      
 }
 
 .modal-content, .card {
@@ -45,7 +45,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card-title {
@@ -103,6 +103,7 @@ a {
 .modal-body-right p {
   font-size: 1.0em;
   font-weight: 300;
+  line-height: 1.7em;
 }
 
 header {
