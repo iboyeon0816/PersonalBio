@@ -1,4 +1,3 @@
-import "./firestore.mjs";
 import {
   addEntityWithKey,
   addEntityWithoutKey,
@@ -141,6 +140,7 @@ $("#repo").on("click", async (event) => {
   //   await addGuestBook("abc123", "do my best!");
   //   await addGuestBook("abc123", "do my best!");
   //   await deleteOneGuestBook("abc123", "do my best!");
-  let a = await addBioToTeammate("Spartan", "안녕 나는 르탄이.");
+  // let a = await addBioToTeammate("Spartan", "안녕 나는 르탄이.");
+  let a = await getAllTeammates();
   console.log(a);
 });

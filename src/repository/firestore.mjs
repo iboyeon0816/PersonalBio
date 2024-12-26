@@ -1,6 +1,4 @@
-import { firebaseConfig } from "./key.dev.mjs";
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { initializeApp } from "firebase/app";
 import {
   collection,
   deleteDoc,
@@ -11,7 +9,8 @@ import {
   query,
   setDoc,
   where,
-} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+} from "firebase/firestore";
+import { firebaseConfig } from "./firebaseConfig.mjs";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
