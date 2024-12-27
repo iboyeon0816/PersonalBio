@@ -37,7 +37,7 @@
       justify-content: flex-start;
       gap: 20px;
       padding: 20px;
-      max-width: 1200px; 
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -56,12 +56,13 @@
 
     @media (max-width: 768px) {
       .team-member {
-        width: 100%;;
+        width: 100%;
+        ;
       }
     }
 
-  
-    .team-member > img {
+
+    .team-member>img {
       width: 100%;
       height: 15rem;
       object-fit: cover;
@@ -69,7 +70,7 @@
       margin-bottom: 2px;
     }
 
-    .team-member > p {
+    .team-member>p {
       text-align: left;
       font-size: 16px;
       margin: 0;
@@ -77,62 +78,80 @@
     }
 
 
-    .member-rank {
+    .member-info>.member-name,
+    .member-info>.member-age {
       font-size: 14px;
-      margin: 0;
+      display: inline;
+      margin-left: 5px;
     }
-    
-    .member-rank > span{
+
+    .member-info>.role {
       font-size: 10px;
       display: inline-block;
       background-color: #00b4d8;
       color: white;
       padding: 3px 10px;
       border-radius: 5px;
-        }
-
-    
+    }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script type="module" src="./repository/repo.mjs">
     document.addEventListener('DOMContentLoaded', async function () {
-    try {
-      const response = await getAllTeammates();
-      
-      // 팀원 데이터 가져오기 
-      if (response.success) {
-        const teamMembers = response.data;
-        const teamContainer = document.querySelector('.team-container');
+      try {
+        const response = await getAllTeammates();
 
-        teamContainer.innerHTML = '';  // 기존 팀원 데이터 초기화 
-        
-        teamMembers.forEach(member => {
-          const memberDiv = document.createElement('div');
-          memberDiv.classList.add('team-member');
-          
-          // 이미지 생성하기
-          const memberImg = document.createElement('img');
-          memberImg.src = member.imageUrl || 'https://picsum.photos/350/350/?image=1'; // 디폴트 이미지 URL
-          memberImg.alt = member.name;
-          memberDiv.appendChild(memberImg);
-          
-          // 이름, 나이, 직책 생성하기
-          const memberInfo = document.createElement('p');
-          memberInfo.classList.add('member-rank');
-          memberInfo.innerHTML = `<span>${member.role || '팀원'}</span>: ${member.name} (${member.age || '정보 없음'})`;
-          memberDiv.appendChild(memberInfo);
-          
-          // 팀원 카드 div를 팀원 컨테이너에 추가
-          teamContainer.appendChild(memberDiv);
-        });
-      } else {
-        console.error('Failed to fetch team members:', response.error);
+        // 팀원 데이터 가져오기
+        if (response.success) {
+          const teamMembers = response.data;
+          const teamContainer = document.querySelector('.team-container');
+
+          teamContainer.innerHTML = '';  // 기존 팀원 데이터 초기화
+
+          teamMembers.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.classList.add('team-member');
+
+            // 이미지 생성하기
+            const memberImg = document.createElement('img');
+            memberImg.src = member.imageUrl || 'https://picsum.photos/350/350/?image=1'; // 디폴트 이미지 URL
+            memberImg.alt = member.name;
+            memberDiv.appendChild(memberImg);
+
+            // 직책 생성 및 추가하기
+            const memberInfo = document.createElement('div');
+            memberInfo.classList.add('member-info');
+
+            // 역할(span) 추가
+            const roleSpan = document.createElement('span');
+            roleSpan.classList.add('role');
+            roleSpan.textContent = member.role || '팀원';  // 디폴트 '팀원'
+            memberRank.appendChild(roleSpan);
+
+            // 이름(span) 추가
+            const memberName = document.createElement('span');
+            memberName.classList.add('member-name');
+            memberName.textContent = member.name || '이름 없음';  // 디폴트 처리
+            memberRank.appendChild(memberName);
+
+            // 나이(span) 추가
+            const memberAge = document.createElement('span');
+            memberAge.classList.add('member-age');
+            memberAge.textContent = member.age || '정보 없음';  // 디폴트 처리
+            memberRank.appendChild(document.createTextNode(` (${memberAge.textContent})`));
+
+            memberDiv.appendChild(memberRank);
+
+            // 팀원 카드 div를 팀원 컨테이너에 추가
+            teamContainer.appendChild(memberDiv);
+          });
+        } else {
+          console.error('Failed to fetch team members:', response.error);
+        }
+      } catch (error) {
+        console.error('Error fetching team members:', error);
       }
-    } catch (error) {
-      console.error('Error fetching team members:', error);
-    }
-  });
+    });
   </script>
 
   <script>
@@ -164,18 +183,19 @@
     <div class="team-container">
       <div class="team-member">
         <img src="https://picsum.photos/350/350/?image=1" alt="..." onclick="openModal()">
-        <p class="member-rank"><span>팀장</span>: <span class="member-name"></span>(<span class="member-age"></span>) </p>
+        <p class="member-info"><span class="role"></span> : <span class="member-name"></span>(<span class="member-age"></span>)
+        </p>
       </div>
       <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=2"  alt="..." />
+        <img src="https://picsum.photos/350/350/?image=2" alt="..." />
         <p>팀원: XXX</p>
       </div>
       <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=3"  alt="..." />
+        <img src="https://picsum.photos/350/350/?image=3" alt="..." />
         <p>팀원: XXX</p>
       </div>
       <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=4"  alt="..." />
+        <img src="https://picsum.photos/350/350/?image=4" alt="..." />
         <p>팀원: XXX</p>
       </div>
       <div class="team-member">
