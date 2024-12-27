@@ -43,6 +43,19 @@ export async function addBioToTeammate(name, bio) {
   }
 }
 
+// 팀원 하나를 삭제합니다.
+//! name을 반드시 포함해서 호출합니다.
+//* 성공시 true, 실패시 false를 반환합니다.
+export async function deleteOneTeammate(name) {
+  try {
+    await deleteEntityById("teammates", name);
+    return true;
+  } catch (e) {
+    console.error("Failed to delete teammate", e);
+    return false;
+  }
+}
+
 // 모든 팀원의 정보를 데이터베이스에서 가져옵니다.
 //* 반환값의 'success' 프로퍼티를 확인하고 true일때만 data에 접근해야 합니다.
 export async function getAllTeammates() {
