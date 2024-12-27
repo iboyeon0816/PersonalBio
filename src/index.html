@@ -100,8 +100,8 @@
   <script type="module" src="./repository/repo.mjs"></script>
 
   <script>
-    function showAlert(teamMemberName) {
-      alert('teamMemberRank' + teamMemberName + '을 클릭했습니다.')
+    function openModal(teamMemberName) {
+      alert('teamMemberRank' + teamMemberName + '모달창 실행.')
     }
 
   </script>
@@ -127,7 +127,7 @@
     </div>
 
     <div class="team-container">
-      <div class="team-member" onclick="showAlert()">
+      <div class="team-member" onclick="openModal()">
         <img src="https://picsum.photos/350/350/?image=1" class="team-member-card" alt="..." />
         <p class="member rank"><span class="member-rank-span">팀원</span>: XXX</p>
       </div>
