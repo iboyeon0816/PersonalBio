@@ -1,86 +1,182 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>우리 팀 소개</title>
 
-    <link rel="modulepreload" href="./repository/repo.mjs" />
-    <link rel="modulepreload" href="./repository/firestore.mjs" />
-    <link rel="stylesheet" href="./styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리 팀 소개</title>
 
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="./repository/repo.mjs"></script>
-  </head>
-  <body>
-    <!-- 헤더 -->
-    <header>
-      <button id="repo">테스트</button>
-      <h1>열심히 하겠조</h1>
-      <nav>
-        <a href="#team">팀원 소개</a>
-        <a href="#about">About Me</a>
-        <a href="#guestbook">방명록</a>
-      </nav>
-    </header>
+  <link rel="modulepreload" href="./repository/repo.mjs" />
+  <link rel="modulepreload" href="./repository/firestore.mjs" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- font -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <style>
+    .team-text {
+      font-family: 'Pretendard', sans-serif;
+      width: 300px;
+      margin: 20px auto;
+      text-align: center;
+    }
 
-    <!-- 팀원 소개 -->
-    <section id="team">
+    .team-text p {
+      font-size: 13px;
+      color: #000000;
+      margin-bottom: 10px
+    }
+
+    .team-text h2 {
+      font-size: 23px;
+      color: #00b4d8;
+      margin: 0;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+
+
+    .team-member {
+      width: 18rem;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* justify-content: space-between; */
+      justify-content: flex-start;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin-left: 0;
+      /* 왼쪽 정렬을 유도 */
+    }
+
+    .member-rank {
+      width: 100;
+      background-color: #00b4d8;
+      color: white;
+      padding: 2px 5px 2px 5px;
+      border-radius: 5px;
+      width: 100%;
+
+    }
+
+    .member-rank p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .team-container {
+        justify-content: flex-start;
+        /* 창 크기가 작아지면 왼쪽 정렬 */
+      }
+
+      .team-member {
+        margin-left: 0;
+        /* 작은 화면에서는 왼쪽 정렬 제거 */
+      }
+    }
+
+    .team-member img {
+      width: 100%;
+      height: 15rem;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .team-member p {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="module" src="./repository/repo.mjs"></script>
+
+  <script>
+    function showAlert(teamMemberName) {
+      alert('teamMemberRank' + teamMemberName + '을 클릭했습니다.')
+    }
+
+  </script>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header>
+    <button id="repo">테스트</button>
+    <h1>열심히 하겠조</h1>
+    <nav>
+      <a href="#team">팀원 소개</a>
+      <a href="#about">About Me</a>
+      <a href="#guestbook">방명록</a>
+    </nav>
+  </header>
+
+  <!-- 팀원 소개 -->
+  <section id="team">
+    <div class="team-text">
+      <p>열심히하는 우리 팀원들을 소개합니다!</p>
       <h2>팀원 소개</h2>
-      <div class="team-container">
-        <div class="team-member">
-          <img src="team1.png" alt="김종연" />
-          <p>팀원: 김종연</p>
-        </div>
-        <div class="team-member">
-          <img src="team1.png" alt="고대현" />
-          <p>팀원: 고대현</p>
-        </div>
-        <div class="team-member">
-          <img src="team1.png" alt="권호준" />
-          <p>팀원: 권호준</p>
-        </div>
-        <div class="team-member">
-          <img src="team1.png" alt="이보연" />
-          <p>팀원: 이보연</p>
-        </div>
-        <div class="team-member">
-          <img src="team1.png" alt="임요한" />
-          <p>팀원: 임요한</p>
-        </div>
-        <!-- 추가 팀원 -->
-      </div>
-    </section>
+    </div>
 
-    <!-- About Me -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-me">
-        <img src="profile.png" alt="프로필 사진" />
-        <p>
-          안녕하세요, 저는 OOO 입니다. 열정적으로 도전하고 노력하며 성장하고
-          있습니다!
-        </p>
+    <div class="team-container">
+      <div class="team-member" onclick="showAlert()">
+        <img src="https://picsum.photos/350/350/?image=1" class="team-member-card" alt="..." />
+        <p class="member rank"><span class="member-rank-span">팀원</span>: XXX</p>
       </div>
-    </section>
-
-    <!-- 방명록 -->
-    <section id="guestbook">
-      <h2>방명록</h2>
-      <form id="guestbook-form">
-        <input type="text" id="name" placeholder="작성자" required />
-        <textarea id="message" placeholder="내용" required></textarea>
-        <button type="submit">작성하기</button>
-      </form>
-      <div id="messages">
-        <!-- 방명록 메시지 -->
+      <div class="team-member">
+        <img src="https://picsum.photos/350/350/?image=2" class="team-member-card" alt="..." />
+        <p>팀원: XXX</p>
       </div>
-    </section>
+      <div class="team-member">
+        <img src="https://picsum.photos/350/350/?image=3" class="team-member-card" alt="..." />
+        <p>팀원: XXX</p>
+      </div>
+      <div class="team-member">
+        <img src="https://picsum.photos/350/350/?image=4" class="team-member-card" alt="..." />
+        <p>팀원: XXX</p>
+      </div>
+      <div class="team-member">
+        <img src="https://picsum.photos/350/350/?image=5" class="team-member-card" alt="..." />
+        <p>팀원: XXX</p>
+      </div>
+      <!-- 추가 팀원 -->
+    </div>
+  </section>
 
-    <script type="module" src="./script.js"></script>
-  </body>
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-me">
+      <img src="profile.png" alt="프로필 사진" />
+      <p>
+        안녕하세요, 저는 OOO 입니다. 열정적으로 도전하고 노력하며 성장하고
+        있습니다!
+      </p>
+    </div>
+  </section>
+
+  <!-- 방명록 -->
+  <section id="guestbook">
+    <h2>방명록</h2>
+    <form id="guestbook-form">
+      <input type="text" id="name" placeholder="작성자" required />
+      <textarea id="message" placeholder="내용" required></textarea>
+      <button type="submit">작성하기</button>
+    </form>
+    <div id="messages">
+      <!-- 방명록 메시지 -->
+    </div>
+  </section>
+
+  <script type="module" src="./script.js"></script>
+</body>
+
 </html>
