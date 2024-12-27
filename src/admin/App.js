@@ -1,15 +1,24 @@
 // import { addBioToTeammate } from "../repository/repo.mjs";
-
 import Component from "./core/Component";
+import Router from "./core/Router";
+import createRoute from "./pages/index";
 
-import Content from "./components/Content";
-import Headers from "./components/Header";
+import Headers from "./components/header";
 import Navbar from "./components/navbar";
 
 // $("body").on("click", async (event) => {
 //   await addBioToTeammate();
 // });
 export default class App extends Component {
+  setInitialState() {
+    this.state = {
+      menuItems: [
+        { label: "팀원 관리", link: "#/teammate" },
+        { label: "방명록 관리", link: "#/guestbooks" },
+      ],
+    };
+  }
+
   template() {
     return `
         <header locate-component="header"></header>
@@ -24,15 +33,17 @@ export default class App extends Component {
     const $header = this.$target.querySelector('[locate-component="header"]');
     const $navbar = this.$target.querySelector('[locate-component="navbar"]');
     const $content = this.$target.querySelector('[locate-component="content"]');
+    const pages = createRoute($content);
 
     new Headers($header);
-    new Navbar($navbar);
-    new Content($content);
+    new Navbar($navbar, {
+      menuItems: this.state.menuItems,
+    });
+    new Router($content, pages);
   }
 
   style() {
     return `
-
         header {
             height: 76px;
             display: flex;

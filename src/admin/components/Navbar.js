@@ -3,13 +3,7 @@ import Component from "../core/Component";
 export default class Navbar extends Component {
   setInitialState() {
     const { menuItems } = this.props;
-    this.state = {
-      menuItems: [
-        { label: "팀원 관리", link: "#팀원" },
-        { label: "방명록 관리", link: "#방명록" },
-        { label: "뭐하지?", link: "#뭐하지" },
-      ],
-    };
+    this.state = { menuItems };
   }
 
   template() {
