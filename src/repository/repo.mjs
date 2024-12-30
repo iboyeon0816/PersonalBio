@@ -127,7 +127,7 @@ export async function getAllGuestBook() {
   }
 }
 
-// 방명록 하나를 삭제합니다.
+// 작성자와 내용을 이용해서 방명록 하나를 삭제합니다.
 //! author와 content를 반드시 포함해서 호출합니다.
 //* 성공시 true, 실패시 false를 반환합니다.
 export async function deleteOneGuestBook(author, content) {
@@ -146,14 +146,15 @@ export async function deleteOneGuestBook(author, content) {
   }
 }
 
-// 테스트 함수
-$("#repo").on("click", async (event) => {
-  //   await deleteEntityById("guestbook", "lvgN7vmmzLKoWJSxhKPe");
-  //   await addGuestBook("abc123", "do my best!");
-  //   await addGuestBook("abc123", "do my best!");
-  //   await addGuestBook("abc123", "do my best!");
-  //   await deleteOneGuestBook("abc123", "do my best!");
-  // let a = await addBioToTeammate("Spartan", "안녕 나는 르탄이.");
-  let a = await getAllGuestBook();
-  console.log(a);
-});
+// id를 이용해서 방명록 하나를 삭제합니다.
+//! author와 content를 반드시 포함해서 호출합니다.
+//* 성공시 true, 실패시 false를 반환합니다.
+export async function deleteGuestbookById(guestbookId) {
+  try {
+    await deleteEntityById("guestbook", guestbookId);
+    return true;
+  } catch (e) {
+    console.error("Failed to delete guestbook", e);
+    return false;
+  }
+}

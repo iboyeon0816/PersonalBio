@@ -35,7 +35,7 @@ export default class Navbar extends Component {
         .nav-bar > ul > a {
             text-decoration: none;
             font-size: 14px;
-            color:rgb(238, 238, 238);
+            color: white;
         }
     `;
   }

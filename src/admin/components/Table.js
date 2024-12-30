@@ -1,9 +1,8 @@
-import { deleteOneTeammate } from "../../repository/repo.mjs";
 import Component from "../core/Component";
 
 export default class Table extends Component {
   template() {
-    const { data, columns } = this.props;
+    const { data, columns, createDeleteBtn } = this.props;
     const tableHead = `<tr>${
       columns.map((column) => `<th>${column.label}</th>`).join("") + `<th></th>`
     }</tr>`;
@@ -12,8 +11,8 @@ export default class Table extends Component {
       .map((datum) => {
         return `<tr>${
           columns.map((column) => `<td>${datum[column.key]}</td>`).join("") +
-          `<td>
-                <button id="${datum.name}" class="delete-btn">🗑️</button>
+          `<td width="10%">
+                ${createDeleteBtn(datum.id)}
           </td>`
         }</tr>`;
       })
@@ -28,11 +27,13 @@ export default class Table extends Component {
   }
 
   setEventListener() {
+    const { onclickDelete } = this.props;
+
     this.addEvent("click", ".delete-btn", async ({ target }) => {
       let val = confirm("정말로 삭제하시겠습니까?");
       if (val) {
-        console.log(val, target.id);
-        await deleteOneTeammate(target.id);
+        await onclickDelete(target.id);
+        console.log(target.id);
         window.location.reload();
       }
     });
@@ -47,9 +48,7 @@ export default class Table extends Component {
             width: 100%;
             border-collapse: collapse;
             border-radius: 5px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+
             margin-top: 24px;
         }
 
@@ -62,6 +61,10 @@ export default class Table extends Component {
         td, th {
             padding: 1em .5em;
             vertical-align: middle;
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         td {

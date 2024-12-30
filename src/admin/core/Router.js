@@ -11,7 +11,6 @@ export default class Router extends Component {
   }
 
   checkRoutes() {
-    // console.log(this.state.routes);
     const currentRoute = this.state.routes.find(
       ({ path }) => path === window.location.hash
     );

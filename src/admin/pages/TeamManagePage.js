@@ -1,4 +1,4 @@
-import { getAllTeammates } from "../../repository/repo.mjs";
+import { deleteOneTeammate, getAllTeammates } from "../../repository/repo.mjs";
 
 import Table from "../components/Table";
 import Component from "../core/Component";
@@ -30,13 +30,15 @@ export default class TeamManagePage extends Component {
           { label: "자기소개", key: "bio" },
           { label: "TMI", key: "tmi" },
         ],
+        createDeleteBtn: (btnId) =>
+          `<button id=${btnId} class="delete-btn">🗑️</button>`,
+        onclickDelete: () => deleteOneTeammate,
       });
     }
   }
 
   async fetchTeammates() {
     let res = await getAllTeammates();
-    console.log(res);
     if (res.success) {
       this.setState({ teammates: res.data });
     } else {
