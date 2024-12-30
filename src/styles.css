@@ -1,7 +1,7 @@
 .team-text {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 1rem auto;
+  margin: 5rem auto;
 }
 
 .team-text p {
@@ -146,7 +146,8 @@ nav a:first-child {
 
 .team-text h2 {
   font-size: 1.5rem;
-  color: #5bbae5;
+  color: #00b4d8;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -162,9 +163,11 @@ nav a:first-child {
 
 .team-container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5rem;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .team-member {
@@ -192,18 +195,19 @@ nav a:first-child {
 }
 
 .team-member .role {
-  font-size: 0.8rem;
-  background-color: #5bbae5;
+  font-size: 0.9rem;
+  background-color: #48cae4;
   color: white;
-  padding: 0.3rem 0.5rem;
+  padding: 0.1rem 0.6rem;
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 0.5rem;
+  margin-right: 0.3rem;
 }
 
 .team-member .member-name {
   font-weight: bold;
-  margin-right: 0.5rem;
+  margin-right: 0.2rem;
 }
 
 .team-member .member-age {
