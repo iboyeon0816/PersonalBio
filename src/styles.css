@@ -8,9 +8,10 @@
   font-size: 1rem;
   color: #333;
   margin-bottom: 0.5rem;
+}
 
 body {
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -26,7 +27,8 @@ a {
   width: 70%;
 }
 
-.modal-content, .card {
+.modal-content,
+.card {
   border-radius: 15px;
 }
 
@@ -72,7 +74,7 @@ a {
   top: 0;
   left: 0;
   transform: translateX(-110%);
-  background-color: #48CAE4;
+  background-color: #48cae4;
   color: white;
   padding: 0.2em 0.7em;
   border-radius: 4px;
@@ -86,7 +88,7 @@ a {
 }
 
 .social-links a {
-  margin-right: 1.0em;
+  margin-right: 1em;
 }
 
 .social-links a:last-child {
@@ -98,7 +100,7 @@ a {
 }
 
 .modal-body-right {
-  padding: 2.0em 1.5em;
+  padding: 2em 1.5em;
 }
 
 .card-text {
@@ -112,7 +114,7 @@ a {
 }
 
 .modal-body-right p {
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: 300;
   line-height: 1.7em;
 }
@@ -129,11 +131,11 @@ header {
   font-size: 1.3em;
   font-weight: 600;
   margin-bottom: 0;
-  color: #00B4D8;
+  color: #00b4d8;
 }
 
 nav a {
-  font-size: 1.0em;
+  font-size: 1em;
 }
 
 nav a:first-child {
@@ -196,7 +198,6 @@ nav a:first-child {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
-
 
 .team-member .member-name {
   font-weight: bold;
@@ -274,12 +275,12 @@ nav a:first-child {
   font-size: 18px; /* 버튼 텍스트 크기 확대 */
   font-weight: bold;
   color: white;
-  background-color: #48CAE4;
+  background-color: #48cae4;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
 #guestbook-form button:hover {
-  background-color: #0096C7;
+  background-color: #0096c7;
 }
