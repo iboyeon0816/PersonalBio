@@ -58,7 +58,6 @@
     </div>
     <!-- 헤더 -->
     <header>
-      <!-- <button id="repo">테스트</button> -->
       <a class="logo" href="#">열심히하겠조</a>
       <nav>
         <a href="#team">팀원 소개</a>
@@ -92,7 +91,6 @@
           <img src="team1.png" alt="임요한" />
           <p>팀원: 임요한</p>
         </div>
-        <!-- 추가 팀원 -->
       </div>
     </section>
     <!-- Button trigger modal -->
@@ -102,8 +100,12 @@
     <section id="guestbook">
       <h2>방명록</h2>
       <form id="guestbook-form">
-        <input type="text" id="name" placeholder="작성자" required />
-        <textarea id="message" placeholder="내용" required></textarea>
+        <label for="name">작성자</label>
+        <input type="text" id="name" placeholder="작성자를 입력하세요" required />
+
+        <label for="message">내용</label>
+        <textarea id="message" placeholder="내용을 입력하세요" required></textarea>
+
         <button type="submit">작성하기</button>
       </form>
       <div id="messages">
