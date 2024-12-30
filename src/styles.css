@@ -236,11 +236,12 @@ nav a:first-child {
 }
 
 #guestbook h2 {
-  margin-bottom: 30px; /* 제목과 폼 간격 증가 */
-  font-size: 36px; /* 제목 크기 확대 */
   font-weight: bold;
-  color: #333;
   text-align: center;
+  font-size: 1.5rem;
+  color: #00b4d8;
+  font-weight: 600;
+  margin: 5rem auto 1rem auto;
 }
 
 #guestbook-form {
