@@ -8,12 +8,152 @@
   font-size: 1rem;
   color: #333;
   margin-bottom: 0.5rem;
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.modal-dialog {
+  max-width: 600px;
+  width: 70%;
+}
+
+.modal-content, .card {
+  border-radius: 15px;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-body-left {
+  width: 35%;
+}
+
+.modal-body-right {
+  width: 65%;
+}
+
+.card {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.card-img-top {
+  height: 62%;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  position: relative;
+}
+
+.card-title::before {
+  content: "팀원";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-110%);
+  background-color: #48CAE4;
+  color: white;
+  padding: 0.2em 0.7em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-links a {
+  margin-right: 1.0em;
+}
+
+.social-links a:last-child {
+  margin-right: 0;
+}
+
+.social-links i {
+  font-size: 1.8em;
+}
+
+.modal-body-right {
+  padding: 2.0em 1.5em;
+}
+
+.card-text {
+  font-size: 0.9em;
+}
+
+.modal-body-right h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+}
+
+.modal-body-right p {
+  font-size: 1.0em;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+header {
+  padding: 0.5em 5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #00B4D8;
+}
+
+nav a {
+  font-size: 1.0em;
+}
+
+nav a:first-child {
+  margin-right: 2em;
 }
 
 .team-text h2 {
   font-size: 1.5rem;
   color: #5bbae5;
   margin: 0;
+}
+
+#banner {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#banner img {
+  width: 100%;
 }
 
 .team-container {
@@ -57,6 +197,7 @@
   margin-bottom: 0.5rem;
 }
 
+
 .team-member .member-name {
   font-weight: bold;
   margin-right: 0.5rem;
@@ -79,7 +220,66 @@
   }
 }
 
+#guestbook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
 
+#guestbook h2 {
+  margin-bottom: 30px; /* 제목과 폼 간격 증가 */
+  font-size: 36px; /* 제목 크기 확대 */
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
 
+#guestbook-form {
+  width: 100%;
+  max-width: 600px; /* 폼 너비 증가 */
+  background-color: #f9f9f9;
+  padding: 30px; /* 내부 여백 증가 */
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 더 강한 그림자 */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 입력 필드 간 간격 증가 */
+}
 
+#guestbook-form label {
+  font-size: 18px; /* 라벨 크기 확대 */
+  font-weight: bold;
+  color: #333;
+}
 
+#guestbook-form input,
+#guestbook-form textarea {
+  width: 100%;
+  padding: 15px; /* 입력 필드 내부 여백 증가 */
+  font-size: 16px; /* 입력 필드 텍스트 크기 확대 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#guestbook-form textarea {
+  height: 150px; /* 텍스트 박스 높이 증가 */
+  resize: none; /* 크기 조정 방지 */
+}
+
+#guestbook-form button {
+  width: 100%;
+  padding: 15px; /* 버튼 높이 증가 */
+  font-size: 18px; /* 버튼 텍스트 크기 확대 */
+  font-weight: bold;
+  color: white;
+  background-color: #48CAE4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#guestbook-form button:hover {
+  background-color: #0096C7;
+}
