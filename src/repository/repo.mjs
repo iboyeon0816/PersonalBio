@@ -14,7 +14,7 @@ import {
 /*
  * teammate(팀원) 관련 함수
  * teammate 자료는 다음을 포함합니다.
- * { name: string, age: number, tmi: string, bio: string }
+ * { id: number, name: string, age: number, tmi: string, bio: string, gitUrl: string, blogUrl: string }
  */
 
 //  팀원의 정보를 데이터베이스에 저장합니다.
