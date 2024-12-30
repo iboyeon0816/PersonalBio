@@ -47,7 +47,6 @@ export default class Table extends Component {
             width: 100%;
             border-collapse: collapse;
             border-radius: 5px;
-
             margin-top: 24px;
         }
 
