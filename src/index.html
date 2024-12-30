@@ -1,107 +1,136 @@
 <!DOCTYPE html>
 <html lang="ko">
-  
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>우리 팀 소개</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우리 팀 소개</title>
 
-  <link rel="modulepreload" href="./repository/repo.mjs" />
-  <link rel="modulepreload" href="./repository/firestore.mjs" />
-  <link rel="stylesheet" href="./styles.css" />
-  <!-- font -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="modulepreload" href="./repository/repo.mjs" />
+    <link rel="modulepreload" href="./repository/firestore.mjs" />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- font -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script type="module" src="./repository/repo.mjs"></script>
-  <script type="module" src="./src/script.js"></script>
-</head>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./repository/repo.mjs"></script>
+  </head>
 
-<body>
-  <!-- 헤더 -->
-  <header>
-    <button id="repo">테스트</button>
-    <h1>열심히 하겠조</h1>
-    <nav>
-      <a href="#team">팀원 소개</a>
-      <a href="#about">About Me</a>
-      <a href="#guestbook">방명록</a>
-    </nav>
-  </header>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <button id="repo">테스트</button>
+      <h1>열심히 하겠조</h1>
+      <nav>
+        <a href="#team">팀원 소개</a>
+        <a href="#about">About Me</a>
+        <a href="#guestbook">방명록</a>
+      </nav>
+    </header>
 
-  <!-- 팀원 소개 -->
-  <section id="team">
-    <div class="team-text">
-      <p>열심히하는 우리 팀원들을 소개합니다!</p>
-      <h2>팀원 소개</h2>
-    </div>
-
-    <div class="team-container">
-      <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=1" alt="..." onclick="openModal()">
-        <p class="member-info">팀장<span class="role"></span> : <span class="member-name"></span>(<span
-            class="member-age"></span>)
-        </p>
+    <!-- 팀원 소개 -->
+    <section id="team">
+      <div class="team-text">
+        <p>열심히하는 우리 팀원들을 소개합니다!</p>
+        <h2>팀원 소개</h2>
       </div>
 
-      <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=1" alt="..." onclick="openModal()">
-        <p class="member-info">팀원<span class="role"></span> : <span class="member-name"></span>(<span
-            class="member-age"></span>)
+      <div class="team-container">
+        <div class="team-member">
+          <img
+            src="https://picsum.photos/350/350/?image=1"
+            alt="..."
+            onclick="openModal()"
+          />
+          <p class="member-info">
+            팀장<span class="role"></span> :
+            <span class="member-name"></span>(<span class="member-age"></span>)
+          </p>
+        </div>
+
+        <div class="team-member">
+          <img
+            src="https://picsum.photos/350/350/?image=1"
+            alt="..."
+            onclick="openModal()"
+          />
+          <p class="member-info">
+            팀원<span class="role"></span> :
+            <span class="member-name"></span>(<span class="member-age"></span>)
+          </p>
+        </div>
+
+        <div class="team-member">
+          <img
+            src="https://picsum.photos/350/350/?image=1"
+            alt="..."
+            onclick="openModal()"
+          />
+          <p class="member-info">
+            팀원<span class="role"></span> :
+            <span class="member-name"></span>(<span class="member-age"></span>)
+          </p>
+        </div>
+
+        <div class="team-member">
+          <img
+            src="https://picsum.photos/350/350/?image=1"
+            alt="..."
+            onclick="openModal()"
+          />
+          <p class="member-info">
+            팀원<span class="role"></span> :
+            <span class="member-name"></span>(<span class="member-age"></span>)
+          </p>
+        </div>
+
+        <div class="team-member">
+          <img
+            src="https://picsum.photos/350/350/?image=1"
+            alt="..."
+            onclick="openModal()"
+          />
+          <p class="member-info">
+            팀원<span class="role"></span> :
+            <span class="member-name"></span>(<span class="member-age"></span>)
+          </p>
+        </div>
+
+        <!-- 추가 팀원 -->
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-me">
+        <img src="profile.png" alt="프로필 사진" />
+        <p>
+          안녕하세요, 저는 OOO 입니다. 열정적으로 도전하고 노력하며 성장하고
+          있습니다!
         </p>
       </div>
+    </section>
 
-      <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=1" alt="..." onclick="openModal()">
-        <p class="member-info">팀원<span class="role"></span> : <span class="member-name"></span>(<span
-            class="member-age"></span>)
-        </p>
+    <!-- 방명록 -->
+    <section id="guestbook">
+      <h2>방명록</h2>
+      <form id="guestbook-form">
+        <input type="text" id="name" placeholder="작성자" required />
+        <textarea id="message" placeholder="내용" required></textarea>
+        <button type="submit">작성하기</button>
+      </form>
+      <div id="messages">
+        <!-- 방명록 메시지 -->
       </div>
+    </section>
 
-      <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=1" alt="..." onclick="openModal()">
-        <p class="member-info">팀원<span class="role"></span> : <span class="member-name"></span>(<span
-            class="member-age"></span>)
-        </p>
-      </div>
-
-      <div class="team-member">
-        <img src="https://picsum.photos/350/350/?image=1" alt="..." onclick="openModal()">
-        <p class="member-info">팀원<span class="role"></span> : <span class="member-name"></span>(<span
-            class="member-age"></span>)
-        </p>
-      </div>
-     
-      <!-- 추가 팀원 -->
-    </div>
-  </section>
-
-  <!-- About Me -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-me">
-      <img src="profile.png" alt="프로필 사진" />
-      <p>
-        안녕하세요, 저는 OOO 입니다. 열정적으로 도전하고 노력하며 성장하고
-        있습니다!
-      </p>
-    </div>
-  </section>
-
-  <!-- 방명록 -->
-  <section id="guestbook">
-    <h2>방명록</h2>
-    <form id="guestbook-form">
-      <input type="text" id="name" placeholder="작성자" required />
-      <textarea id="message" placeholder="내용" required></textarea>
-      <button type="submit">작성하기</button>
-    </form>
-    <div id="messages">
-      <!-- 방명록 메시지 -->
-    </div>
-  </section>
-
-  <script type="module" src="./script.js"></script>
-</body>
+    <script type="module" src="./script.js"></script>
+  </body>
 </html>
