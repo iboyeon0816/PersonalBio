@@ -1,3 +1,14 @@
+.team-text {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.team-text p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+
 body {
   font-family: 'Pretendard', sans-serif;
   line-height: 1.6;
@@ -129,9 +140,10 @@ nav a:first-child {
   margin-right: 2em;
 }
 
-section {
-  padding: 2rem;
-  margin: 1rem;
+.team-text h2 {
+  font-size: 1.5rem;
+  color: #5bbae5;
+  margin: 0;
 }
 
 #banner {
@@ -146,29 +158,66 @@ section {
 
 .team-container {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .team-member {
+  width: calc(25% - 1rem);
+  min-width: 180px;
+  max-width: 250px;
   text-align: center;
-  width: 150px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .team-member img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.about-me img {
-  width: 150px;
-  border-radius: 50%;
+.team-member .member-info {
+  padding: 0.5rem;
+  font-size: 0.9rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.team-member .role {
+  font-size: 0.8rem;
+  background-color: #5bbae5;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+
+.team-member .member-name {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.team-member .member-age {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+    width: 100%;
+  }
 }
 
 #guestbook {
