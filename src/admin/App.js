@@ -13,7 +13,7 @@ export default class App extends Component {
   setInitialState() {
     this.state = {
       menuItems: [
-        { label: "팀원 관리", link: "#/teammate" },
+        { label: "팀원 관리", link: "#/teammates" },
         { label: "방명록 관리", link: "#/guestbooks" },
       ],
     };

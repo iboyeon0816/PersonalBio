@@ -40,7 +40,6 @@ export default class TeamManagePage extends Component {
 
   async fetchGuestbook() {
     let res = await getAllGuestBook();
-    console.log(res);
     if (res.success) {
       this.setState({ guestbook: res.data });
     } else {
