@@ -111,9 +111,20 @@ document
           memberRank.appendChild(document.createTextNode(` (${memberAge.textContent})`));
   
           memberDiv.appendChild(memberRank);
+
+          memberDiv.setAttribute('data-bs-toggle', 'modal');
+          memberDiv.setAttribute('data-bs-target', '#teamModal');
   
           // 팀원 카드 div를 팀원 컨테이너에 추가
           teamContainer.appendChild(memberDiv);
+
+          memberDiv.addEventListener('click', function () {
+            $('#modal-name').text(member.name || '이름 없음');
+            $('#modal-bio').text(member.bio || '자기소개 없음');
+            $('#modal-tmi').text(member.tmi || 'TMI 없음');
+            $('#modal-github-link').attr('href', member.gitUrl || '#');
+            $('#modal-blog-link').attr('href', member.blogUrl || '#');
+          });
         });
       } else {
         console.error('Failed to fetch team members:', response.error);
