@@ -3,12 +3,9 @@ import Component from "./core/Component";
 import Router from "./core/Router";
 import createRoute from "./pages/index";
 
-import Headers from "./components/header";
-import Navbar from "./components/navbar";
+import Headers from "./components/Header";
+import Navbar from "./components/Navbar";
 
-// $("body").on("click", async (event) => {
-//   await addBioToTeammate();
-// });
 export default class App extends Component {
   setInitialState() {
     this.state = {
