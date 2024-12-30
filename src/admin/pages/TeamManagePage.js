@@ -32,7 +32,7 @@ export default class TeamManagePage extends Component {
         ],
         createDeleteBtn: (btnId) =>
           `<button id=${btnId} class="delete-btn">🗑️</button>`,
-        onclickDelete: () => deleteOneTeammate,
+        onclickDelete: deleteOneTeammate,
       });
     }
   }
